@@ -1,4 +1,16 @@
-import { Avatar, AvatarGroup, Box, Divider, ImageList, ImageListItem, List, ListItem, ListItemAvatar, ListItemText, Typography } from "@mui/material";
+import {
+  Avatar,
+  AvatarGroup,
+  Box,
+  Divider,
+  ImageList,
+  ImageListItem,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+  Typography,
+} from "@mui/material";
 import React from "react";
 
 function Rightbar() {
@@ -78,20 +90,25 @@ function Rightbar() {
             />
           </ImageListItem>
         </ImageList>
-        <Typography variant="h6" fontWeight={100} mt={2} >
+        <Typography variant="h6" fontWeight={100} mt={2}>
           Latest Conversations
         </Typography>
-        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+        <List
+          sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+        >
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
-              <Avatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+              <Avatar
+                alt="Remy Sharp"
+                src="https://mui.com/static/images/avatar/1.jpg"
+              />
             </ListItemAvatar>
             <ListItemText
               primary="Brunch this weekend?"
               secondary={
                 <React.Fragment>
                   <Typography
-                    sx={{ display: 'inline' }}
+                    sx={{ display: "inline" }}
                     component="span"
                     variant="body2"
                     color="text.primary"
@@ -106,14 +123,17 @@ function Rightbar() {
           <Divider variant="inset" component="li" />
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
-              <Avatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
+              <Avatar
+                alt="Travis Howard"
+                src="https://mui.com/static/images/avatar/2.jpg"
+              />
             </ListItemAvatar>
             <ListItemText
               primary="Summer BBQ"
               secondary={
                 <React.Fragment>
                   <Typography
-                    sx={{ display: 'inline' }}
+                    sx={{ display: "inline" }}
                     component="span"
                     variant="body2"
                     color="text.primary"
@@ -128,21 +148,24 @@ function Rightbar() {
           <Divider variant="inset" component="li" />
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
-              <Avatar alt="Cindy Baker" src="https://mui.com/static/images/avatar/3.jpg" />
+              <Avatar
+                alt="Cindy Baker"
+                src="https://mui.com/static/images/avatar/3.jpg"
+              />
             </ListItemAvatar>
             <ListItemText
               primary="Oui Oui"
               secondary={
                 <React.Fragment>
                   <Typography
-                    sx={{ display: 'inline' }}
+                    sx={{ display: "inline" }}
                     component="span"
                     variant="body2"
                     color="text.primary"
                   >
                     Sandra Adams
                   </Typography>
-                  {' — Do you have Paris recommendations? Have you ever…'}
+                  {" — Do you have Paris recommendations? Have you ever…"}
                 </React.Fragment>
               }
             />

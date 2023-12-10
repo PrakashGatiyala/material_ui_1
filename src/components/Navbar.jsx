@@ -1,36 +1,47 @@
-import { Mail, Notifications, Pets } from '@mui/icons-material'
-import { AppBar, Avatar, Badge, Box, InputBase, Menu, MenuItem, Toolbar, Typography, styled } from '@mui/material'
-import React, { useState } from 'react'
+import { Mail, Notifications, Pets } from "@mui/icons-material";
+import {
+  AppBar,
+  Avatar,
+  Badge,
+  Box,
+  InputBase,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+  styled,
+} from "@mui/material";
+import React, { useState } from "react";
 
+const StyledToolBar = styled(Toolbar)({
+  display: "flex",
+  justifyContent: "space-between",
+});
+const Search = styled("div")(({ theme }) => ({
+  backgroundColor: "white",
+  padding: "0 10px",
+  borderRadius: theme.shape.borderRadius,
+  width: "40%",
+}));
+const Icons = styled(Box)(({ theme }) => ({
+  display: "none",
+  gap: "20px",
+  alignItems: "center",
+  [theme.breakpoints.up("sm")]: {
+    display: "flex",
+  },
+}));
+const UserBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  gap: "10px",
+  alignItems: "center",
+  [theme.breakpoints.up("sm")]: {
+    display: "none",
+  },
+}));
 
-const StyledToolBar =  styled(Toolbar)({
-  display:"flex",
-  justifyContent:"space-between"
-})
-const Search = styled("div")( ({theme})=>({
-  backgroundColor:"white",
-  padding:"0 10px",
-  borderRadius:theme.shape.borderRadius,
-  width:"40%"
-}) )
-const Icons = styled(Box)( ({theme})=>({
-  display:"none",
-  gap:"20px",
-  alignItems:"center",
-  [theme.breakpoints.up("sm")]:{
-    display:"flex"
-  }
-}) )
-const UserBox = styled(Box)( ({theme})=>({
-  display:"flex",
-  gap:"10px",
-  alignItems:"center",
-  [theme.breakpoints.up("sm")]:{
-    display:"none"
-  }
-}) )
 const Navbar = () => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <AppBar position="sticky">
@@ -40,7 +51,16 @@ const Navbar = () => {
         </Typography>
         <Pets sx={{ display: { xs: "block", sm: "none" } }} />
         <Search>
-          <InputBase placeholder="search..." />{" "}
+          <InputBase
+            sx={{
+              input: {
+                "&::placeholder": {
+                  color: "blue",
+                },
+              },
+            }}
+            placeholder="search..."
+          />{" "}
         </Search>
         <Icons>
           <Badge badgeContent={4} color="error">
@@ -52,14 +72,13 @@ const Navbar = () => {
           <Avatar
             sx={{ width: 30, height: 30, backgroundColor: "white" }}
             src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
-            onClick={e=>setOpen(true)}
+            onClick={(e) => setOpen(true)}
           />
         </Icons>
-        <UserBox onClick={e=>setOpen(true)}>
+        <UserBox onClick={(e) => setOpen(true)}>
           <Avatar
             sx={{ width: 30, height: 30, backgroundColor: "white" }}
             src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
-            
           />
           <Typography variant="span">Jenny</Typography>
         </UserBox>
@@ -68,7 +87,7 @@ const Navbar = () => {
         id="demo-positioned-menu"
         aria-labelledby="demo-positioned-button"
         open={open}
-        onClose= {e=>setOpen(false)}
+        onClose={(e) => setOpen(false)}
         anchorOrigin={{
           vertical: "top",
           horizontal: "right",
@@ -84,6 +103,6 @@ const Navbar = () => {
       </Menu>
     </AppBar>
   );
-}
+};
 
-export default Navbar
+export default Navbar;
